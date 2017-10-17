@@ -44,6 +44,7 @@ func (s *Session) createSessionStore(res http.ResponseWriter, req *http.Request)
 	s.store.Options = &sessions.Options{
 		MaxAge:   s.MaxAge,
 		HttpOnly: true,
+		Domain:   req.Host,
 	}
 }
 
